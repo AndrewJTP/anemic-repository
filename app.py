@@ -3,6 +3,7 @@ import urllib.request
 import json
 import os
 import ssl
+from flask_cors import CORS
 
 
 
@@ -13,6 +14,8 @@ def allowSelfSignedHttps(allowed):
 allowSelfSignedHttps(True) 
 
 app= Flask(__name__)
+CORS(app, origins='*')
+
 
 @app.route("/")
 def root():
