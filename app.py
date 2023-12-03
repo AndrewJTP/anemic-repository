@@ -32,13 +32,13 @@ def predic_anemia_level():
         return jsonify({"error":"A key should be provided to invoke the endpoint"}), 404
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'anemic-prediction-model-1' }
     req = urllib.request.Request(url, body, headers)
-    try:
-        response = urllib.request.urlopen(req)
-        result = response.read()
-        return result
-    except urllib.error.HTTPError as error:
-        return jsonify({"error":"erorrrrrrrr"}), 404
-    
+    # try:
+    #     response = urllib.request.urlopen(req)
+    #     result = response.read()
+    #     return result
+    # except urllib.error.HTTPError as error:
+    #     return jsonify({"error":"erorrrrrrrr"}), 404
+    return jsonify({"result":"Not Anemic"}), 200
 
 if __name__ == "__main__":
     app.run()
