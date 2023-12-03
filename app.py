@@ -26,7 +26,7 @@ def predic_anemia_level():
     data = request.get_json()
 
     body = str.encode(json.dumps(data))
-    url = 'https://proy-children-anemic-ugnzw.eastus2.inference.ml.azure.com/score'
+    url = 'https://proy-children-anemic-lbixa.eastus2.inference.ml.azure.com/score'
     api_key = '4LdIDdrOhpJvZDCbT0hcFi7HMHgDU3JE'
     if not api_key:
         return jsonify({"error":"A key should be provided to invoke the endpoint"}), 404
